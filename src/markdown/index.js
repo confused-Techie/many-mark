@@ -1,5 +1,5 @@
 const deepmerge = require("deepmerge");
-const renderer = require("./renderer.js");
+const renderer = require("./renderer2.js");
 
 const DEFAULT_OPTS = {
   linguist: {
@@ -53,7 +53,7 @@ async function parser(text, givenOpts) {
   }
 
   const render = renderer.build(opts);
-  const text = renderer.render(text, opts, renderer);
+  const renderedText = renderer.render(text, opts, render);
 
-  return { text: text, opts: opts };
+  return { text: renderedText, opts: opts };
 }

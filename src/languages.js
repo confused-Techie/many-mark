@@ -25,7 +25,7 @@ function determine(filename) {
     case ".asciidoc":
     case ".adoc":
     case ".asc":
-      // NOT CURRENTLY SUPPORTED
+      return "asciidoc";
     case ".pod":
       // NOT CURRENTLY SUPPORTED
     default:
@@ -37,9 +37,11 @@ module.exports = {
   determine,
   default: "markdown",
   supported: [
-    "markdown"
+    "markdown",
+    "asciidoc",
   ],
   parsers: {
-    markdown: require("./markdown/index.js")
+    markdown: require("./markdown/index.js"),
+    asciidoc: require("./asciidoc/index.js"),
   }
 };
