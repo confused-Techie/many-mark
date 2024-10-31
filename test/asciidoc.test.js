@@ -9,11 +9,19 @@ describe("AsciiDoc Tests", () => {
 
     const html = await manyMark(str, { language: "asciidoc" });
 
-    console.log(html);
+    assert.strictEqual(
+      html.text,
+      "<h1>Hello World!</h1>\n<p>I am <strong>confused-Techie</strong>!</p>"
+    );
+  });
+  it("Parses simple AsciiDoc with Filename provided", async () => {
+    const str = "== Hello World!\nI am **confused-Techie**!";
+
+    const html = await manyMark(str, { filename: "README.adoc" });
 
     assert.strictEqual(
-      "<h1>Hello World!</h1>\n<p>I am <strong>confused-Techie</strong>!</p>\n",
-      html.text
+      html.text,
+      "<h1>Hello World!</h1>\n<p>I am <strong>confused-Techie</strong>!</p>"
     );
   });
 });

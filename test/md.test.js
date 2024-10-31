@@ -10,8 +10,8 @@ describe("Markdown Tests", () => {
     const html = await manyMark(str, { language: "markdown" });
 
     assert.strictEqual(
-      "<h1>Hello World!</h1>\n<p>I am <strong>confused-Techie</strong>!</p>\n",
-      html.text
+      html.text,
+      "<h1>Hello World!</h1>\n<p>I am <strong>confused-Techie</strong>!</p>\n"
     );
   });
 
@@ -21,8 +21,8 @@ describe("Markdown Tests", () => {
     const html = await manyMark(str, { filename: "README.md" });
 
     assert.strictEqual(
-      "<h1>Hello World!</h1>\n<p>I am <strong>confused-Techie</strong>!</p>\n",
-      html.text
+      html.text,
+      "<h1>Hello World!</h1>\n<p>I am <strong>confused-Techie</strong>!</p>\n"
     );
   });
 });
